@@ -1,0 +1,52 @@
+{
+	"client": "musoscorner.com.au",
+    "site": "awave.com.au",
+	"product_list": {
+		"start_urls": [
+            "url": "https://www.awave.com.au/product-category/outboard/",
+            "url": "https://www.awave.com.au/product-category/",
+            "url": "https://www.awave.com.au/product-category/monitoring/",
+            "url": "https://www.awave.com.au/product-category/consoles/",
+            "url": "https://www.awave.com.au/product-category/instruments/",
+            "url": "https://www.awave.com.au/product-category/computer-music/",
+            "url": "https://www.awave.com.au/product-category/accessories/"],
+		"product_urls_path": {
+			"path_type": "css",
+			"path": ".woocommerce-LoopProduct-link::attr(href)"
+		},
+		"next_page_path": {
+			"path_type": "css",
+			"path": ".next::attr(href)"
+		}
+	},
+	"product_detail": {
+		"name_path": {
+			"path_type": "xpath",
+			"path": "//*[@class=\"summary entry-summary\"]/h1/text()"
+		},
+		"price_path": {
+			"path_type": "xpath",
+			"path": "//*[@class=\"woocommerce-Price-amount amount\"]/text()"
+		},
+		"rrp_path": {
+			"path_type": "none",
+			"path": ""
+		},
+		"sku_path": {
+			"path_type": "xpath",
+			"path": "//*[@class=\"sku\"]/text()"
+		},
+		"description_path": {
+			"path_type": "xpath",
+			"path": "//*[@id=\"tab-description\"]"
+		},
+		"brand_path": {
+			"path_type": "xpath",
+			"path": "//*[@class=\"wb-posted_in\"]/a/text()"
+		},
+		"category_path": {
+			"path_type": "css",
+			"path": "//*[@class=\"posted_in\"]/a/text()"
+		}
+	}
+}

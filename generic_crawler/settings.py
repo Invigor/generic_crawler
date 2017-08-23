@@ -73,10 +73,23 @@ LOG_LEVEL = 'INFO'
 
 # ElasticSearch package parameters
 ELASTICSEARCH_SERVERS = 'http://search-spotlite-n2y7ob5yspdm54tbtp26hchjbq.ap-southeast-2.es.amazonaws.com:80' 
-ELASTICSEARCH_INDEX = 'awave'
+# ELASTICSEARCH_INDEX = 'awave'
 # ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m-%d'
 ELASTICSEARCH_TYPE = 'crawl'
 # ELASTICSEARCH_UNIQ_KEY = 'url'
+
+# DynamoDB Details 
+
+# ITEM_PIPELINES = {
+#    'scrapy_dynamodb.DynamoDbPipeline': 1,
+# }
+DYNAMODB_PIPELINE_REGION_NAME = 'ap-southeast-2'
+DYNAMODB_PIPELINE_TABLE_NAME = 'product_urls'
+
+# AWS Credentials
+AWS_ACCESS_KEY_ID = 'AKIAJA2ZVG7N627QLBWA'
+AWS_SECRET_ACCESS_KEY = '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'
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 # NOTE: AutoThrottle will honour the standard settings for concurrency and delay

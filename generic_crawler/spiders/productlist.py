@@ -5,6 +5,10 @@ from generic_crawler.items import ProductListItem
 
 class ProductList(CrawlSpider):
     name = 'productlist'
+    custom_settings = {
+    	'ITEM_PIPELINES': {'scrapy_dynamodb.DynamoDbPipeline': 1}
+	}
+
     start_urls = [
       	'https://www.awave.com.au/product-category/outboard/',
 	'https://www.awave.com.au/product-category/',
@@ -38,7 +42,8 @@ class ProductList(CrawlSpider):
 	   #     product['price'] = '0.00'
            # product['name'] = names[i]
            # if len(prices) > i:
-           product['producturl'] = producturls[i]
+           product['url'] = producturls[i]
+	   product['site'] = 'awave.com.au'
 	   #else:
 	   #    product['producturl'] = ''
 	   # self.logger.info('Processing:! %s', names[i])
