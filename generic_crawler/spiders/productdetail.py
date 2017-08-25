@@ -3,6 +3,9 @@ from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from generic_crawler.items import ProductDetailItem
 from bs4 import BeautifulSoup
+import boto3
+from boto3.dynamodb.conditions import Key, Attr
+
 
 class ProductDetail(CrawlSpider):
     name = 'productdetail'
@@ -11,9 +14,16 @@ class ProductDetail(CrawlSpider):
         }
       
     # allowed_domains = ['awave.com.au']
+
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('product_urls')
+
+    urls = table.scan(FilterExpression=Attr('site').eq('awave.com.au'))
+
+
     start_urls = [
 	# Open the Product URLs CSV ignoring the first line
-      	l.strip() for l in open('producturls.csv').readlines()[1:]
+      	l['url'].strip() for l in urls['Items']
 	]
 
     def parse(self, response):

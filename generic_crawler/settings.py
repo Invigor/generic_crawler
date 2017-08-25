@@ -73,7 +73,7 @@ LOG_LEVEL = 'INFO'
 
 # ElasticSearch package parameters
 ELASTICSEARCH_SERVERS = 'http://search-spotlite-n2y7ob5yspdm54tbtp26hchjbq.ap-southeast-2.es.amazonaws.com:80' 
-# ELASTICSEARCH_INDEX = 'awave'
+ELASTICSEARCH_INDEX = 'awave'
 # ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m-%d'
 ELASTICSEARCH_TYPE = 'crawl'
 # ELASTICSEARCH_UNIQ_KEY = 'url'
